@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         slide.classList.add('carousel-slide');
         
         const img = document.createElement('img');
-        img.src = `img/${i}.jpg`;
+        img.src = `img/${i}.jpeg`;
         img.alt = `Recuerdo Aniversario ${i}`;
         
         // Imagen de respaldo por si falta alguna en la carpeta
