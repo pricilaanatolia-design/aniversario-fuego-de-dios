@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const totalImages = 16; // Total de imágenes requeridas
+    const totalImages = 16; // Total de imágenes
     const track = document.getElementById('carouselTrack');
+    const container = document.querySelector('.carousel-container');
     const indicatorsContainer = document.getElementById('carouselIndicators');
     
-    // Generar dinámicamente los slides y los indicadores para las 16 imágenes
+    // Generar dinámicamente los slides y los indicadores del 1 al 16 con extensión .jpeg
     for (let i = 1; i <= totalImages; i++) {
-        // Crear elemento slide
         const slide = document.createElement('div');
         slide.classList.add('carousel-slide');
         
         const img = document.createElement('img');
-        img.src = `img/${i}.jpeg`;
+        img.src = `img/${i}.jpeg`; // Aquí se cambió .jpg por .jpeg
         img.alt = `Recuerdo Aniversario ${i}`;
         
-        // Imagen de respaldo por si falta alguna en la carpeta
+        // Imagen de respaldo por si falta alguna foto
         img.onerror = function() {
             this.src = 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80';
         };
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
         slide.appendChild(img);
         track.appendChild(slide);
 
-        // Crear indicador (punto de navegación)
         const indicator = document.createElement('div');
         indicator.classList.add('indicator');
         if (i === 1) indicator.classList.add('active');
@@ -45,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateCarousel() {
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        
         indicators.forEach((ind, index) => {
             if (index === currentIndex) {
                 ind.classList.add('active');
@@ -74,6 +72,30 @@ document.addEventListener('DOMContentLoaded', function () {
         prevSlide();
         resetAutoSlide();
     });
+
+    // Soporte táctil (Swipe) para celulares
+    let startX = 0;
+    let endX = 0;
+
+    container.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    container.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const threshold = 40;
+        if (startX - endX > threshold) {
+            nextSlide();
+            resetAutoSlide();
+        } else if (endX - startX > threshold) {
+            prevSlide();
+            resetAutoSlide();
+        }
+    }
 
     // Auto reproducción cada 4 segundos
     let autoSlide = setInterval(nextSlide, 4000);
