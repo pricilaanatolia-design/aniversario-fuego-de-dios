@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9° Aniversario - Convivencia Fuego de Dios</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="invitation-container">
+        <!-- Decoración superior -->
+        <div class="gold-brush top-brush"></div>
+
+        <!-- Encabezado -->
+        <header class="header-section">
+            <h1 class="main-title">Convivencia</h1>
+            <div class="subtitle-wrapper">
+                <span class="sub-name">Uriel</span>
+                <div class="anniversary-badge">
+                    <span class="number">9</span>
+                    <span class="label">ANIVERSARIO</span>
+                </div>
+                <span class="sub-theme">Fuego de Dios</span>
+            </div>
+        </header>
+
+        <!-- Información del Evento -->
+        <section class="event-details">
+            <div class="detail-card">
+                <i class="fa-regular fa-calendar-days"></i>
+                <div>
+                    <h3>Fecha</h3>
+                    <p>Domingo 18 de noviembre</p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="detail-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <h3>Ubicación</h3>
+                    <p>Punto de reunión: Parroquia</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrusel de Imágenes (16 imágenes) -->
+        <section class="carousel-section">
+            <h2>Galería de Recuerdos</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Las imágenes se cargan dinámicamente desde script.js -->
+                </div>
+                <button class="carousel-btn prev-btn" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-btn next-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+        </section>
+
+        <!-- Botón de Confirmación de Asistencia -->
+        <section class="rsvp-section">
+            <!-- REEMPLAZA EL ENLACE DE ABAJO CON TU GOOGLE FORM O ENLACE DE ENCUESTA -->
+            <a href="https://forms.gle/TU_ENLACE_DE_ENCUESTA_AQUI" target="_blank" class="rsvp-button">
+                <i class="fa-regular fa-envelope-open"></i> Confirmar asistencia
+            </a>
+        </section>
+
+        <!-- Decoración inferior -->
+        <div class="gold-brush bottom-brush"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

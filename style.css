@@ -1,0 +1,322 @@
+:root {
+    --primary-color: #5c1d1d; /* Vino / Borgoña elegante */
+    --gold-color: #c5a059;    /* Dorado elegante */
+    --gold-light: #dfc27d;
+    --bg-color: #fffdf9;      /* Crema / Blanco cálido */
+    --text-color: #3b1b1b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px; /* Margen móvil más reducido */
+    background-image: radial-gradient(circle at 50% 50%, #fffbf0 0%, #f7f1e3 100%);
+}
+
+.invitation-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Tamaño optimizado para tarjetas digitales */
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(92, 29, 29, 0.12);
+    padding: 35px 20px;
+    overflow: hidden;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+/* Pinceladas Doradas Decorativas */
+.gold-brush {
+    position: absolute;
+    width: 110px;
+    height: 22px;
+    background: linear-gradient(90deg, #d4af37, #f3e5ab, #c5a059);
+    opacity: 0.85;
+    border-radius: 50px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.top-brush {
+    top: 15px;
+    right: -15px;
+    transform: rotate(-10deg);
+}
+
+.bottom-brush {
+    bottom: 15px;
+    left: -15px;
+    transform: rotate(10deg);
+}
+
+/* Cabecera */
+.header-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+
+.subtitle-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 10px 0;
+    background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, rgba(255,255,255,0) 70%);
+}
+
+.sub-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--gold-color);
+    font-style: italic;
+    font-weight: 600;
+}
+
+.anniversary-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4px 0;
+}
+
+.anniversary-badge .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    color: var(--primary-color);
+    line-height: 0.9;
+    font-weight: 700;
+}
+
+.anniversary-badge .label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.sub-theme {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--gold-color);
+    font-style: italic;
+}
+
+/* Detalles del Evento */
+.event-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: #fdfbf7;
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    border-radius: 12px;
+    padding: 15px 10px;
+    margin-bottom: 25px;
+    gap: 8px;
+}
+
+.detail-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    flex: 1;
+}
+
+.detail-card i {
+    font-size: 1.4rem;
+    color: var(--gold-color);
+    flex-shrink: 0;
+}
+
+.detail-card h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--gold-color);
+    margin-bottom: 2px;
+}
+
+.detail-card p {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.divider {
+    width: 1px;
+    height: 38px;
+    background-color: rgba(197, 160, 89, 0.4);
+    flex-shrink: 0;
+}
+
+/* Carrusel de Imágenes en Móvil */
+.carousel-section {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.carousel-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Mantiene la proporción óptima en teléfonos */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    background: #000;
+    touch-action: pan-y; /* Permite deslizar suavemente en pantallas táctiles */
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(92, 29, 29, 0.75);
+    color: #fff;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.carousel-btn:hover, .carousel-btn:active {
+    background: var(--primary-color);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+
+.indicator {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(197, 160, 89, 0.4);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.indicator.active {
+    background: var(--primary-color);
+    transform: scale(1.3);
+}
+
+/* Sección RSVP / Botón Móvil */
+.rsvp-section {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.rsvp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color), #3b1b1b);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(92, 29, 29, 0.25);
+    transition: transform 0.2s, background 0.3s;
+    border: 1px solid var(--gold-color);
+}
+
+.rsvp-button:active {
+    transform: scale(0.98);
+}
+
+.rsvp-button i {
+    margin-right: 8px;
+    color: var(--gold-light);
+}
+
+/* Ajustes específicos para móviles pequeños (iPhone SE, etc.) */
+@media (max-width: 400px) {
+    .event-details {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 15px;
+    }
+
+    .divider {
+        width: 100%;
+        height: 1px;
+        margin: 5px 0;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .anniversary-badge .number {
+        font-size: 3.8rem;
+    }
+}
